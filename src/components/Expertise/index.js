@@ -19,8 +19,8 @@ const Expertise = (props) => {
       }, []);
 
     return (
-        <div className="container" style={{ marginTop: "80px" }}>
-            <div>
+        <div className="container" style={{ marginTop: "80px" }} id="skills">
+            <div >
                 <SmallHeading text="Expertise" />
                 <MediumHeading text="Special Skills" />
             </div>

@@ -7,60 +7,59 @@ import Cricket from "../../assets/hobby/cricket.jpg";
 import Cycling from "../../assets/hobby/cycling.jpg";
 import Music from "../../assets/hobby/music.jpg";
 import "./style.css";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import MediumHeading from "../UI/MediumHeading";
 
-const LatestProjects = (props) =>
-{
+const skillArr = [
+    {
+        name: "Coding",
+        img: Coding,
+    },
+    {
+        name: "Badminton",
+        img: Badminton,
+    },
+    {
+        name: "Cricket",
+        img: Cricket,
+    },
+    {
+        name: "Cycling",
+        img: Cycling,
+    },
+    {
+        name: "Music",
+        img: Music,
+    },
+]
+
+const LatestProjects = (props) => {
+    React.useEffect(() => {
+        AOS.init();
+        AOS.refresh();
+    }, []);
+
+
     return (
-        <div className="container" style={{marginTop: "50px", marginBottom: "50px", width: "600px"}}>
-            <Card className="flexRow align-center justify-se" style={{backgroundColor: "#fff"}}>
-                <div>
-                    <SmallHeading text = "Coding" />   
-                </div>
+        <div className="container" style={{ marginTop: "50px", marginBottom: "50px", width: "600px" }} id="hobby">
+            <SmallHeading text = "Hobbies" />
+            <MediumHeading text = {"My Leisure Time Utilization"} />
+            <div style={{margin: "3ch 0"}} />
+            {
+                skillArr.map((el, i) => (
+                    <Card key={i} data-aos="zoom-in-down" data-aos-duration="3000"
+                        className="flexRow align-center justify-se" style={{ backgroundColor: "#fff", marginBottom: "2ch" }}>
+                        <div>
+                            <SmallHeading text={el.name} />
+                        </div>
 
-                <div className="projectImgContainer" style={{width: "240px"}}>
-                    <img style={{width: "100%"}} src={Coding} alt="" />
-                </div>
-            </Card>
-
-            <Card className="flexRow align-center  justify-se" style={{backgroundColor: "#fff"}}>
-                <div>
-                    <SmallHeading text = "Badminton" />   
-                </div>
-
-                <div className="projectImgContainer" style={{width: "240px"}}>
-                    <img style={{width: "100%"}} src={Badminton} alt="" />
-                </div>
-            </Card>
-
-            <Card className="flexRow align-center  justify-se" style={{backgroundColor: "#fff"}}>
-                <div>
-                    <SmallHeading text = "Cricket" />   
-                </div>
-
-                <div className="projectImgContainer" style={{width: "240px"}}>
-                    <img style={{width: "100%"}} src={Cricket} alt="" />
-                </div>
-            </Card>
-
-            <Card className="flexRow align-center  justify-se" style={{backgroundColor: "#fff"}}>
-                <div>
-                    <SmallHeading text = "Cycling" />   
-                </div>
-
-                <div className="projectImgContainer" style={{width: "240px"}}>
-                    <img style={{width: "100%"}} src={Cycling} alt="" />
-                </div>
-            </Card>
-
-            <Card className="flexRow align-center justify-se" style={{backgroundColor: "#fff"}}>
-                <div>
-                    <SmallHeading text = "Music" />   
-                </div>
-
-                <div className="projectImgContainer" style={{width: "240px"}}>
-                    <img style={{width: "100%"}} src={Music} alt="" />
-                </div>
-            </Card>
+                        <div className="projectImgContainer" style={{ width: "240px" }}>
+                            <img style={{ width: "100%" }} src={el.img} alt="" />
+                        </div>
+                    </Card>
+                ))
+            }
         </div>
     )
 }

@@ -1,0 +1,28 @@
+.btn:hover, .btn.active {
+    background: transparent;
+    border: 2px solid #0DBCB4;
+}
+.btn {
+    padding: 1ch 2ch;
+    border-radius: 3ch;
+    border: 2px solid transparent;
+}
+.nav-bar.moved {
+    backdrop-filter: blur(2rem);
+    transition-property: background-color, backdrop-filter;
+    transition-duration: 0.7s;
+  }
+
+  .nav-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 2ch 7%;
+    z-index: 100;
+    opacity: 0.9;
+    transition: all 1s ease-in;
+  }
+
+  /* style={{display: "flex", width: "100%", alignItems: "center", padding: "2ch 7%", position: "fixed", top: 0, zIndex: 10}} */

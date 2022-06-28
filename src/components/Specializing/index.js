@@ -72,11 +72,10 @@ const Specializing = (props)=>{
           pathColor: '#1D5C63'
         },
       ]
-
     return (
       
-      <div className= "container"> 
-      <Card style={{padding: "50px"}}>
+      <div className= "container" id="specialization"> 
+      <Card style={{padding: "50px", borderRadius: "3ch"}}>
         <SmallHeading text = "What i do" />
         <MediumHeading text = "Specializing In" />
         <div className="flexRow wrap justify-se mtb-10"  style={{padding: "30px 20px"}}>
